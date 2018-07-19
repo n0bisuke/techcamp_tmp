@@ -4,6 +4,7 @@
 
 あああああ
 
+edoooo
 yadoo！！
 
 sugiura
