@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <title>DOMとは「WEBページとプログラミング言語を繋ぐ役割を持つ」</title>
+    <style>
+        #section-1 {
+            background-color: #C8E6C9;
+        }
+        #section-2 {
+            background-color: #FFF9C4;
+        }
+    </style>
+</head>
+<body>
+<section id="section-1">
+    <h2 id="child">すぎちゃんセクション</h2>
+    <p>子ノード1</p>
+    <p>子ノード2</p>
+    <p>子ノード3</p>
+</section>
+<section id="yadoo">
+    <h2>Yadooセクション</h2>
+    <p>子ノード1</p>
+    <p>子ノード2</p>
+    <p>子ノード3</p>
+</section>
+</body>
+<script>
+    const yadoo = document.querySelectorAll('#section-1 p');
+    // const yadoo = document.getElementById('yadoo');
+    yadoo[0].style.color = 'red';
+    yadoo[1].style.color = 'red';
+    yadoo[2].style.color = 'red';
+    console.log(yadoo);
+
+    const nodeList = yadoo.childNodes;
+    console.log(nodeList);   
+
+    nodeList[5].innerHTML = "前は広告代理店";
+
+    const sugi = document.getElementById('child');
+    console.log(sugi);
+    const sugiSection = sugi.parentNode;
+    console.log(sugiSection);
+    // sugiSection.removeChild(sugi);
+    const p = document.createElement("p");
+    p.innerHTML = "hogehoge";
+    sugiSection.appendChild(p);
+    const b = document.createElement("p");
+    b.innerHTML = "hugahuga";
+    // sugiSection.appendChild(b);
+    sugiSection.append(b);
+    sugiSection.prepend("aaa");
+</script>
+</html>
